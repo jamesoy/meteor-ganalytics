@@ -48,6 +48,8 @@ if(Meteor.settings && Meteor.settings.public !== undefined && Meteor.settings.pu
   if (gaSettings.trackInPage)
     ga('require', 'linkid', 'linkid.js');
 
+  GAnalytics._gaTracker = ga;
+
   GAnalytics.pageview = function(pageLocation) {
     if(!pageLocation) {
       pageLocation = window.location.pathname;
